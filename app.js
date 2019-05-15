@@ -16,9 +16,9 @@ var app = express();
 app.use(express.static('static'));
 app.set('view engine', 'ejs');
 
-app.use( bodyParser.json() ); 
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-  extended: false
+    extended: false
 }));
 app.use('/api/v1/', apiv1.router);
 
@@ -28,6 +28,6 @@ server.listen(port, function () {
     console.log('Weather Report listening on ' + url);
 });
 
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
     return res.render('main');
 });

@@ -17,7 +17,7 @@
             app.use('/api/v1/', apiv1.router);
         });
 
-    	it('with valid zip code', function(done) {
+    	it('with valid city name', function(done) {
     		rqst(app).get('/api/v1/getWeather?zip=78613')
     		.end(function(err, res) {
                     assert.equal(res.status, 2000);
@@ -26,7 +26,7 @@
                 });
     	});
 
-    	it('with without zip code', function(done) {
+    	it('with without city name', function(done) {
     		rqst(app).get('/api/v1/getWeather')
     		.end(function(err, res) {
                     assert.equal(res.status, 4000);
@@ -34,7 +34,7 @@
                 });
     	});
 
-    	it('with invalid zip code', function(done) {
+    	it('with invalid city name', function(done) {
     		rqst(app).get('/api/v1/getWeather?zip=00000')
     		.end(function(err, res) {
                     assert.equal(res.status, 400);
@@ -42,7 +42,7 @@
                 });
     	});
 
-    	it('with incomplete zip code', function(done) {
+    	it('with incomplete city name', function(done) {
     		rqst(app).get('/api/v1/getWeather?zip=786')
     		.end(function(err, res) {
                     assert.equal(res.status, 400);
