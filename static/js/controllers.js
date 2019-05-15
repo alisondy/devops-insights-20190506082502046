@@ -34,7 +34,7 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
                     data = $scope.zip4m;
                     break;
             }
-            if (data > 0) {
+            if (data.length !== 0) {
                 $http({
                     method: "GET",
                     url: '/api/v1/getWeather?city=' + data
