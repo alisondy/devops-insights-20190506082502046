@@ -28,12 +28,12 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
             data = $scope.zip3m;
         } else if(which === 4) {
             data = $scope.zip4m;
-        } 
+        }
 
-        if(data.length === 5) {
+        if(data.length > 5) {
             $http({
                 method: "GET",
-                url: '/api/v1/getWeather?zip=' + data
+                url: '/api/v1/getWeather?city=' + data
             }).then( function(response) {
                 if(which === 1) {
                     $scope.zip1City = response.data.city;
@@ -47,7 +47,7 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
                 } else if(which === 4) {
                     $scope.zip4City = response.data.city;
                     $scope.zip4Weather = response.data.weather;
-                } 
+                }
             });
         } else {
             if(which === 1) {
@@ -62,8 +62,8 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
                 } else if(which === 4) {
                     $scope.zip4City = "";
                     $scope.zip4Weather = "";
-                } 
+                }
         }
     };
-    
+
 }]);
