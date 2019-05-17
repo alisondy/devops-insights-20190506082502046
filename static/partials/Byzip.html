@@ -5,7 +5,7 @@
       	<div id="zipcode" class="headerText" style="width:10em">Zip Code</div>
       	<div id="location" class="headerText" style="width:10em">Location</div>
       	<div id="weather" class="headerText">Weather</div>
-      </div>
+	  </div>
 
       <div style="float:left; width:100%">
       	<div class="headerText" style="width:10em">
@@ -13,7 +13,8 @@
       	</div>
       	<div id="zip1city" class="underline" style="width:10em">&nbsp;{{zip1City}}</div>
       	<div id="zip1weather" class="underline">&nbsp;{{zip1Weather}}</div>
-      </div>
+
+	  </div>
       <div style="float:left; width:100%">
       	<div class="headerText" style="width:10em">
       		<span><input id="zip2" type="text" ng-model="zip2m" ng-change="zip(2)"></span>
@@ -35,5 +36,7 @@
       	<div id="zip4city" class="underline" style="width:10em">&nbsp;{{zip4City}}</div>
       	<div id="zip4weather" class="underline">&nbsp;{{zip4Weather}}</div>
       </div>
+
   	</div>
+	<div id="weatherMap" class="container" style="height: 20em"></div>
 </div>
